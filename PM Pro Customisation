@@ -1,0 +1,20 @@
+<?php
+/*
+Plugin Name: PMPro Customizations
+Plugin URI: https://www.paidmembershipspro.com/wp/pmpro-customizations/
+Description: Customizations for my Paid Memberships Pro Setup
+Version: .1
+Author: Paid Memberships Pro
+Author URI: https://www.paidmembershipspro.com
+*/
+ 
+//Now start placing your customization code below this line
+
+/**
+ * Adds text before the submit button on the checkout page.
+ * Add this code below to your PMPro Customizations Plugin - https://www.paidmembershipspro.com/create-a-plugin-for-pmpro-customizations/
+ */
+function add_text_before_submit() {
+	echo '<p style="background-color: #efefef; border: solid 2px #ff0000; color: #ff0000; padding: 15px 15px 15px 15px; margin-top: 20px;"><strong>When you submit this form, you will receive an email to verify your email address.<br>Click on the link in that message to complete your registration and activate your membership.</strong><br><img src="https://www.icaea.aero/wp-content/uploads/2020/12/lock-icon.png" style="padding-top: 10px; margin-bottom: -1px;" width="13px" /><span style="color: #333333;"><strong>&nbsp;&nbsp;&nbsp;Secure SSL encrypted payments are processed using Stripe.<strong></span></p>';
+}
+add_action( 'pmpro_checkout_before_submit_button', 'add_text_before_submit' );
